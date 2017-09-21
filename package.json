@@ -16,8 +16,14 @@
   },
   "homepage": "https://github.com/ca-la/svgbundler#readme",
   "dependencies": {
+    "@types/koa": "2.0.39",
+    "@types/koa-router": "7.0.23",
     "@types/node": "8.0.28",
-    "typescript": "2.5.2"
+    "@types/xml2js": "0.4.0",
+    "koa": "2.3.0",
+    "koa-router": "7.2.1",
+    "typescript": "2.5.2",
+    "xml2js": "0.4.19"
   },
   "devDependencies": {
     "tslint": "5.7.0"
