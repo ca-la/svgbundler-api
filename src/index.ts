@@ -1,18 +1,20 @@
 import * as Koa from 'koa';
 import * as Router from 'koa-router';
 
-import logger from './logger';
-import bundleSvg from './bundle-svg';
+import logger from './middleware/logger';
+import bodyParser from './middleware/body-parser';
+import bundleSvgRoute from './routes/bundle-svg';
 
 const { PORT = 8083 } = process.env;
 
 const app = new Koa();
 const router = new Router();
 
-router.post('/', bundleSvg);
+router.post('/', bundleSvgRoute);
 
 app
   .use(logger)
+  .use(bodyParser)
   .use(router.routes())
   .use(router.allowedMethods());
 

@@ -1,25 +1,28 @@
 {
-  "name": "svgbundler",
+  "name": "svgbundler-api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ca-la/svgbundler.git"
+    "url": "git+https://github.com/ca-la/svgbundler-api.git"
   },
   "keywords": [],
   "author": "Dylan Pyle <me@dylanpyle.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ca-la/svgbundler/issues"
+    "url": "https://github.com/ca-la/svgbundler-api/issues"
   },
-  "homepage": "https://github.com/ca-la/svgbundler#readme",
+  "homepage": "https://github.com/ca-la/svgbundler-api#readme",
   "dependencies": {
+    "@types/co-body": "0.0.1",
     "@types/koa": "2.0.39",
+    "@types/koa-bodyparser": "3.0.25",
     "@types/koa-router": "7.0.23",
     "@types/node": "8.0.28",
     "@types/xml2js": "0.4.0",
+    "co-body": "5.1.1",
     "koa": "2.3.0",
     "koa-router": "7.2.1",
     "typescript": "2.5.2",
