@@ -1,0 +1,25 @@
+{
+  "name": "svgbundler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ca-la/svgbundler.git"
+  },
+  "keywords": [],
+  "author": "Dylan Pyle <me@dylanpyle.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ca-la/svgbundler/issues"
+  },
+  "homepage": "https://github.com/ca-la/svgbundler#readme",
+  "dependencies": {
+    "@types/node": "8.0.28",
+    "typescript": "2.5.2"
+  },
+  "devDependencies": {
+    "tslint": "5.7.0"
+  }
+}
