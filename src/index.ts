@@ -5,6 +5,12 @@ import logger from './middleware/logger';
 import bodyParser from './middleware/body-parser';
 import bundleSvgRoute from './routes/bundle-svg';
 
+declare module 'koa' {
+  interface Request {
+    body: string;
+  }
+}
+
 const { PORT = 8083 } = process.env;
 
 const app = new Koa();
