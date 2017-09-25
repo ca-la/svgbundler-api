@@ -5,15 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "make lint && make build",
-    "start": "build-and-run"
+    "start": "make build-and-run"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ca-la/svgbundler-api.git"
   },
   "keywords": [],
-  "author": "Dylan Pyle <me@dylanpyle.com>",
-  "license": "MIT",
+  "author": "CALA <devops@ca.la>",
+  "license": "UNLICENSED",
   "bugs": {
     "url": "https://github.com/ca-la/svgbundler-api/issues"
   },
