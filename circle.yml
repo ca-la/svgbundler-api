@@ -1,0 +1,18 @@
+machine:
+  node:
+    version: 8.*
+
+test:
+  override:
+    - make lint
+    - make build
+
+deployment:
+  staging:
+    branch: master
+    heroku:
+      appname: cala-svgbundler-stg
+  production:
+    branch: production
+    heroku:
+      appname: cala-svgbundler-prod
