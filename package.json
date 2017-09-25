@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "make lint && make build",
+    "start": "build-and-run"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ca-la/svgbundler-api.git"
