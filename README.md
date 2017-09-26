@@ -9,7 +9,7 @@ Accepts POST requests with SVG contents, which it bundles and returns.
 
 ```bash
 $ npm install
-$ make build-and-run
+$ make dev
 $ curl -X POST -d "@file.svg" http://localhost:8083 > file-bundled.svg
 
 ```

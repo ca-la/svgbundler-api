@@ -12,4 +12,9 @@ build:
 run:
 	node dist
 
-build-and-run: build run
+.PHONY: dev
+dev: build run
+
+.PHONY: prod
+prod:
+	NODE_ENV=production $(MAKE) build run

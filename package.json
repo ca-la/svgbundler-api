@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "make lint && make build",
-    "start": "make build-and-run"
+    "start": "make prod"
   },
   "repository": {
     "type": "git",
