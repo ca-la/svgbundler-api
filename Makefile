@@ -13,7 +13,8 @@ run:
 	node dist
 
 .PHONY: dev
-dev: build run
+dev:
+	env $$(cat .env | xargs) $(MAKE) build run
 
 .PHONY: prod
 prod:

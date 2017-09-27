@@ -5,7 +5,7 @@ import logger from './middleware/logger';
 import headers from './middleware/headers';
 import bodyParser from './middleware/body-parser';
 
-import bundleSvgRoute from './routes/bundle-svg';
+import createThumbnailRoute from './routes/create-thumbnail';
 
 declare module 'koa' {
   interface Request {
@@ -18,7 +18,7 @@ const { PORT = 5101 } = process.env;
 const app = new Koa();
 const router = new Router();
 
-router.post('/', bundleSvgRoute);
+router.post('/', createThumbnailRoute);
 
 app
   .use(logger)
