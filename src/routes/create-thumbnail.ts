@@ -3,13 +3,20 @@ import * as svg2png from 'svg2png';
 import bundle from 'svgbundler';
 import * as uuid from 'node-uuid';
 
-import { AWS_S3_BUCKET_NAME } from '../config';
+import { AWS_S3_BUCKET_NAME, CLIENT_TOKEN } from '../config';
 import { upload } from '../services/aws';
 
 export default async function createThumbnailRoute(
   ctx: Koa.Context
 ): Promise<void> {
   let bundled;
+
+  if (
+    CLIENT_TOKEN &&
+    ctx.headers.authorization !== `Token ${CLIENT_TOKEN}`
+  ) {
+    ctx.throw(401, 'Missing or invalid client token');
+  }
 
   try {
     bundled = await bundle(ctx.request.body);

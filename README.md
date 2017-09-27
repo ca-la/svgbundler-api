@@ -22,6 +22,11 @@ Several environment variables must be defined to run an instance of svgthumb:
 - `AWS_SECRET_KEY` - Your AWS secret key
 - `AWS_S3_BUCKET_NAME` - The S3 bucket to upload files into
 
+Other optional configuration:
+
+- `CLIENT_TOKEN` - A shared token that clients must provide in a request header
+  of the format `Authorization: Token CLIENT_TOKEN_GOES_HERE`.
+
 For local development, you can specify these in a `.env` file in the project
 directory:
 
@@ -36,3 +41,4 @@ AWS_S3_BUCKET_NAME='svgthumb-uploads-dev'
 
 - Use headless Chrome rather than PhantomJS. Explored using ImageMagick, but the
   results were much worse (many advanced SVG features unsupported).
+- Build a more robust auth system.
