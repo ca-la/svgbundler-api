@@ -11,9 +11,19 @@
     "type": "git",
     "url": "git+https://github.com/ca-la/svgthumb-api.git"
   },
-  "keywords": [],
+  "keywords": [
+    "svg",
+    "thumbnail",
+    "preview",
+    "png",
+    "svg2png",
+    "convert",
+    "thumb",
+    "http",
+    "microservice"
+  ],
   "author": "CALA <devops@ca.la>",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ca-la/svgthumb-api/issues"
   },
