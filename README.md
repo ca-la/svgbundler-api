@@ -1,6 +1,6 @@
-# svgbundler-api
+# svgthumb-api
 
-A very small API wrapper around
+An API to generate PNG previews of SVG images. Bundles external contents using
 [svgbundler](https://github.com/ca-la/svgbundler).
 
 Accepts POST requests with SVG contents, which it bundles and returns.

@@ -1,5 +1,5 @@
 {
-  "name": "svgbundler-api",
+  "name": "svgthumb-api",
   "version": "1.6.0",
   "description": "",
   "main": "index.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ca-la/svgbundler-api.git"
+    "url": "git+https://github.com/ca-la/svgthumb-api.git"
   },
   "keywords": [],
   "author": "CALA <devops@ca.la>",
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/ca-la/svgbundler-api/issues"
+    "url": "https://github.com/ca-la/svgthumb-api/issues"
   },
-  "homepage": "https://github.com/ca-la/svgbundler-api#readme",
+  "homepage": "https://github.com/ca-la/svgthumb-api#readme",
   "dependencies": {
     "@types/co-body": "0.0.1",
     "@types/koa": "2.0.39",

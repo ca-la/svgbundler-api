@@ -11,8 +11,8 @@ deployment:
   staging:
     branch: master
     heroku:
-      appname: cala-svgbundler-stg
+      appname: cala-svgthumb-api-stg
   production:
     branch: production
     heroku:
-      appname: cala-svgbundler-prod
+      appname: cala-svgthumb-api-prod
