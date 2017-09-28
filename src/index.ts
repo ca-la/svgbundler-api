@@ -19,6 +19,7 @@ const app = new Koa();
 const router = new Router();
 
 router.post('/', createThumbnailRoute);
+router.put('/:id', createThumbnailRoute);
 
 app
   .use(logger)
