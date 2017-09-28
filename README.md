@@ -26,6 +26,7 @@ Other optional configuration:
 
 - `CLIENT_TOKEN` - A shared token that clients must provide in a request header
   of the format `Authorization: Token CLIENT_TOKEN_GOES_HERE`.
+- `PORT` - HTTP server port (default: 5101)
 
 For local development, you can specify these in a `.env` file in the project
 directory:
