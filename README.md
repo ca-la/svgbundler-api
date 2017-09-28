@@ -1,5 +1,7 @@
 # svgthumb-api
 
+Test test test
+
 A HTTP service to generate PNG previews of SVG images. Bundles external
 dependencies using [svgbundler](https://github.com/ca-la/svgbundler), converts
 to PNG, then uploads the result to S3.
