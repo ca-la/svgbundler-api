@@ -4,8 +4,12 @@ SHELL := /bin/bash
 lint:
 	$$(npm bin)/tslint 'src/**/*.ts'
 
+.PHONY: clean
+clean:
+	-rm -r dist
+
 .PHONY: build
-build:
+build: clean
 	$$(npm bin)/tsc
 
 .PHONY: run
