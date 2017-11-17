@@ -1,8 +1,10 @@
 SHELL := /bin/bash
 
+npm_bin = ./node_modules/.bin
+
 .PHONY: lint
 lint:
-	$$(npm bin)/tslint 'src/**/*.ts'
+	$(npm_bin)/tslint 'src/**/*.ts'
 
 .PHONY: clean
 clean:
@@ -10,11 +12,15 @@ clean:
 
 .PHONY: build
 build: clean
-	$$(npm bin)/tsc
+	$(npm_bin)/tsc
 
 .PHONY: run
 run:
 	node dist
+
+.PHONY: release
+release:
+	$(npm_bin)/cala-release $(type)
 
 .PHONY: dev
 dev:
