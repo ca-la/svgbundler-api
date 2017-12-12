@@ -1,4 +1,5 @@
 SHELL := /bin/bash
+.DEFAULT_GOAL := serve-dev
 
 npm_bin = ./node_modules/.bin
 
@@ -23,7 +24,10 @@ release:
 	$(npm_bin)/cala-release $(type)
 
 .PHONY: dev
-dev:
+dev: serve-dev
+
+.PHONY: serve-dev
+serve-dev:
 	env $$(cat .env | xargs) $(MAKE) build run
 
 .PHONY: prod

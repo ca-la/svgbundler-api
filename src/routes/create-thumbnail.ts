@@ -33,7 +33,7 @@ export default async function createThumbnailRoute(
   }
 
   const buffer = Buffer.from(bundled, 'utf8');
-  const pngBuffer: Buffer = await svg2png(buffer);
+  const pngBuffer: Buffer = await svg2png(buffer, { width: 800, height: 800 });
 
   ctx.assert(pngBuffer.byteLength <= MAX_PNG_SIZE_BYTES, 400, 'Resultant image is too large');
 
