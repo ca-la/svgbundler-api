@@ -6,7 +6,10 @@ import * as COLORS from '../services/colors';
 
 async function logger(ctx: Koa.Context, next: () => void): Promise<any> {
   const start = Date.now();
-  await next();
+  try {
+    await next();
+  } catch (err) { /* noop */ }
+
   const ms = Date.now() - start;
 
   const ip = ctx.request.headers['cf-connecting-ip'] || ctx.request.ip;

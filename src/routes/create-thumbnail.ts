@@ -18,7 +18,7 @@ export default async function createThumbnailRoute(
     CLIENT_TOKEN &&
     ctx.headers.authorization !== `Token ${CLIENT_TOKEN}`
   ) {
-    ctx.throw(401, 'Missing or invalid client token');
+    return ctx.throw(401, 'Missing or invalid client token');
   }
 
   const itemId = ctx.params.id || uuid.v4();
@@ -27,12 +27,11 @@ export default async function createThumbnailRoute(
   try {
     bundled = await bundle(ctx.request.body);
   } catch (err) {
-    ctx.body = err.message;
-    ctx.status = 400;
-    return;
+    return ctx.throw(400, err.message);
   }
 
   const buffer = Buffer.from(bundled, 'utf8');
+
   const pngBuffer: Buffer = await svg2png(buffer, { width: 800, height: 800 });
 
   ctx.assert(pngBuffer.byteLength <= MAX_PNG_SIZE_BYTES, 400, 'Resultant image is too large');
