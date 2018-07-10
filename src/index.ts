@@ -1,17 +1,13 @@
 import * as Koa from 'koa';
 import * as Router from 'koa-router';
+import {
+  bodyParser,
+  logger,
+  headers
+} from '@cala/koa-middleware';
 
-import logger from './middleware/logger';
-import headers from './middleware/headers';
-import bodyParser from './middleware/body-parser';
-
+const pkg = require('../package.json');
 import createThumbnailRoute from './routes/create-thumbnail';
-
-declare module 'koa' {
-  interface Request {
-    body: string;
-  }
-}
 
 const { PORT = 8005 } = process.env;
 
@@ -22,9 +18,11 @@ router.post('/', createThumbnailRoute);
 router.put('/:id', createThumbnailRoute);
 
 app
-  .use(logger)
-  .use(headers)
-  .use(bodyParser)
+  .use(logger())
+  .use(headers({
+    poweredBy: `${pkg.name} ${pkg.version}`
+  }))
+  .use(bodyParser())
   .use(router.routes())
   .use(router.allowedMethods());
 
