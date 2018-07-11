@@ -22,6 +22,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run: make lint
+      - run: make test
       - run: make build
       - deploy:
           name: Deploy to Heroku

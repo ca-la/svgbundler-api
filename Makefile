@@ -7,6 +7,10 @@ npm_bin = ./node_modules/.bin
 lint:
 	$(npm_bin)/tslint 'src/**/*.ts'
 
+.PHONY: test
+test:
+	env $$(cat .env | xargs) $(npm_bin)/ts-node $(npm_bin)/tape test.ts
+
 .PHONY: clean
 clean:
 	-rm -r dist
