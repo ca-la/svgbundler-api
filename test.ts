@@ -1,13 +1,15 @@
 import * as test from 'tape';
-import { stub } from 'sinon';
+import { createSandbox } from 'sinon';
 
 import * as request from 'supertest';
 import app from './src/index';
 import * as aws from './src/services/aws';
 
 const testSvg = '<svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="2"/></svg>';
+const sandbox = createSandbox();
 
 test('svgthumb-api POST /', (t: test.Test): void => {
+  const stub = sandbox.stub;
   t.plan(3);
 
   const consoleStub = stub(console, 'log');
@@ -21,7 +23,7 @@ test('svgthumb-api POST /', (t: test.Test): void => {
     .expect('X-Powered-By', /svgthumb-api/)
     .expect('S3 URL')
     .end((error: Error): void => {
-      consoleStub.restore();
+      sandbox.restore();
       server.close();
       t.notOk(error, 'does not return an error');
       t.ok(consoleStub.calledOnce, 'logs request');
