@@ -1,30 +1,31 @@
 import * as Koa from 'koa';
 import * as Router from 'koa-router';
-
-import logger from './middleware/logger';
-import headers from './middleware/headers';
-import bodyParser from './middleware/body-parser';
-
+import { bodyParser, headers, logger } from '@cala/koa-middleware';
 import createThumbnailRoute from './routes/create-thumbnail';
 
-declare module 'koa' {
-  interface Request {
-    body: string;
-  }
-}
+// tslint:disable-next-line:no-var-requires
+const pkg = require('../package.json');
 
 const { PORT = 8005 } = process.env;
 
 const app = new Koa();
 const router = new Router();
 
+declare module 'koa' {
+  interface Request {
+    body: any;
+  }
+}
+
 router.post('/', createThumbnailRoute);
 router.put('/:id', createThumbnailRoute);
 
 app
-  .use(logger)
-  .use(headers)
-  .use(bodyParser)
+  .use(logger())
+  .use(headers({
+    poweredBy: `${pkg.name} ${pkg.version}`
+  }))
+  .use(bodyParser())
   .use(router.routes())
   .use(router.allowedMethods());
 
@@ -33,3 +34,5 @@ if (!module.parent) {
   // tslint:disable-next-line:no-console
   console.log(`Running on :${PORT}`);
 }
+
+export default app;
